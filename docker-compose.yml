@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  jira-alert-tool:
+    build: .
+    container_name: jira_alert_tool
+    restart: always
+    environment:
+      - JIRA_TOKEN=${JIRA_TOKEN}
+      - JIRA_USER=${JIRA_USER}
+      - JIRA_URL=${JIRA_URL}
+      - EMAIL_PORT=${EMAIL_PORT}
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASS=${EMAIL_PASS}
+      - EMAIL_DRY_RUN=${EMAIL_DRY_RUN}
+    volumes:
+      - ./logs:/var/log

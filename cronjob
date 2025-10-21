@@ -1,0 +1,2 @@
+# Chạy script main.py vào 9h sáng mỗi ngày
+0 9 * * * root python /src/main.py >> /var/log/cron.log 2>&1
